@@ -162,22 +162,18 @@ SELECT Distinct Gender, Count(Gender) as count from Sales GROUP BY Gender ORDER 
 
 select Branch , Gender, COUNT(Gender) as count from Sales GROUP BY Branch, Gender ORDER BY branch ;
 -- select Gender, Count(*) as count from Sales where Branch = 'C' GROUP BY Gender ORDER BY count desc;
+
 -- 23. Which time of the day do customers give most ratings?
 select Time_of_Day, avg(rating) as avg_rating from Sales GROUP BY Time_of_Day ORDER BY avg_rating desc;
 
 -- 24. Which time of the day do customers give most ratings per branch?
 select Branch, Time_of_Day, avg(rating) as avg_rating from Sales GROUP BY Branch, Time_of_Day ORDER BY Branch;
 -- select Time_of_Day, avg(Rating) as avg_rating from Sales Where Branch = 'A' GROUP BY Time_of_Day order By avg_rating desc;
+
 -- 25. Which day fo the week has the best avg ratings?
 select Day_Name, avg(Rating) as rating from Sales GROUP BY Day_Name ORDER BY rating desc LIMIT 1;
 
 -- 26. Which day of the week has the best average ratings per branch?
 select Branch, Day_Name, avg(Rating) as rating from Sales GROUP BY Branch, Day_Name ORDER BY rating desc Limit 3;
-SELECT 
-Day_Name,
-	COUNT(Day_Name) total_sales
-FROM Sales
-WHERE Branch = "C"
-GROUP BY Day_Name
-ORDER BY total_sales DESC;
+
 
